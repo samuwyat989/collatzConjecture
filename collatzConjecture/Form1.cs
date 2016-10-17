@@ -29,6 +29,7 @@ namespace collatzConjecture
             int loopNumber = 100;
             int x = Convert.ToInt32(inputButton.Text);
             int y = 50;
+            int numberOfSteps = 50 - y;
 
             for (int i = 0; i < loopNumber; i++)
             {
@@ -37,12 +38,13 @@ namespace collatzConjecture
                     x = x / 2;
                     col.DrawString(Convert.ToString(x), font, brush, 20, y);
                     y = y + 20;
-                    Thread.Sleep(1000);
+                    Thread.Sleep(500);
+                    col.DrawString("Number of steps: " + numberOfSteps, font, brush, 50, y);
                 }
 
                 else if (x == 1) 
                 {
-                    Thread.Sleep(3000);
+                    Thread.Sleep(2000);
                     col.Clear(Color.White);
                     break;  
                 } 
@@ -52,7 +54,8 @@ namespace collatzConjecture
                     x = 3 * x + 1;
                     col.DrawString(Convert.ToString(x), font, brush, 20, y);
                     y = y + 20;
-                    Thread.Sleep(1000);
+                    Thread.Sleep(500);
+                    col.DrawString("Number of steps: " + loopNumber, font, brush, 50, y);
                 }
             }
 
